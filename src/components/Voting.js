@@ -1,21 +1,14 @@
-import React, { PropTypes } from 'react';
+/** @flow */
+import React from 'react';
 import Winner from './Winner';
 import Vote from './Vote';
 
-const propTypes = {
-  winner: PropTypes.any,
-};
-
-const Voting = (props) => (
-  <div>
-    {props.winner ?
-      <Winner
-        winner={props.winner}
-      /> :
-      <Vote {...props} />}
-  </div>
-);
-
-Voting.propTypes = propTypes;
-
-export default Voting;
+export default React.createClass({
+  render: function() {
+    return <div>
+      {this.props.winner ?
+        <Winner ref="winner" winner={this.props.winner} /> :
+        <Vote {...this.props} />}
+    </div>;
+  }
+});

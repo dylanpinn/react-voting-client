@@ -1,43 +1,28 @@
-import React, { Component, PropTypes } from 'react';
+/** @flow */
+import React from 'react';
 
-const propTypes = {
-  pair: PropTypes.array,
-  vote: PropTypes.func,
-  hasVoted: PropTypes.any,
-};
-
-class Vote extends Component {
-  getPair() {
+export default React.createClass({
+  getPair: function() {
     return this.props.pair || [];
-  }
-
-  isDisabled() {
+  },
+  isDisabled: function() {
     return !!this.props.hasVoted;
-  }
-
-  hasVotedFor(entry) {
+  },
+  hasVotedFor: function(entry) {
     return this.props.hasVoted === entry;
+  },
+  render: function() {
+    return <div className="voting">
+      {this.getPair().map(entry =>
+        <button key={entry}
+                disabled={this.isDisabled()}
+                onClick={() => this.props.vote(entry)}>
+          <h1>{entry}</h1>
+          {this.hasVotedFor(entry) ?
+            <div className="label">Voted</div> :
+            null}
+        </button>
+      )}
+    </div>;
   }
-
-  render() {
-    return (
-      <div className="voting">
-        {this.getPair().map(entry =>
-          <button
-            key={entry}
-            onClick={() => this.props.vote(entry)}
-          >
-            <h1>{entry}</h1>
-            {this.hasVotedFor(entry) ?
-              <div className="label">Voted</div> :
-              null}
-          </button>
-        )}
-      </div>
-    );
-  }
-}
-
-Vote.propTypes = propTypes;
-
-export default Vote;
+});
