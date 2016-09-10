@@ -1,0 +1,43 @@
+import React, { Component, PropTypes } from 'react';
+
+const propTypes = {
+  pair: PropTypes.array,
+  vote: PropTypes.func,
+  hasVoted: PropTypes.any,
+};
+
+class Vote extends Component {
+  getPair() {
+    return this.props.pair || [];
+  }
+
+  isDisabled() {
+    return !!this.props.hasVoted;
+  }
+
+  hasVotedFor(entry) {
+    return this.props.hasVoted === entry;
+  }
+
+  render() {
+    return (
+      <div className="voting">
+        {this.getPair().map(entry =>
+          <button
+            key={entry}
+            onClick={() => this.props.vote(entry)}
+          >
+            <h1>{entry}</h1>
+            {this.hasVotedFor(entry) ?
+              <div className="label">Voted</div> :
+              null}
+          </button>
+        )}
+      </div>
+    );
+  }
+}
+
+Vote.propTypes = propTypes;
+
+export default Vote;

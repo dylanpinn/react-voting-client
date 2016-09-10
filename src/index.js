@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Voting from './components/Voting';
 import './index.css';
 
+const pair = ['Trainspotting', '28 Days Later'];
+
 ReactDOM.render(
-  <App />,
+  <Voting pair={pair} winner="Trainspotting" />,
   document.getElementById('root')
 );
