@@ -6,7 +6,7 @@ import {
   Simulate
 } from 'react-addons-test-utils';
 import { List, Map } from 'immutable';
-import Results from './Results';
+import { Results } from './Results';
 
 describe('Results', () => {
   it('renders entries with vote counts or zero', () => {
