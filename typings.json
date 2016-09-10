@@ -2,7 +2,8 @@
   "name": "voting-client",
   "dependencies": {
     "immutable": "registry:npm/immutable#3.7.6+20160411060006",
-    "react": "registry:npm/react#15.0.1+20160601175240"
+    "react": "registry:npm/react#15.0.1+20160601175240",
+    "react-redux": "registry:npm/react-redux#4.4.0+20160614222153"
   },
   "globalDependencies": {
     "jest": "registry:dt/jest#0.9.0+20160706021812"
