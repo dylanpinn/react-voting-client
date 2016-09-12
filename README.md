@@ -1,3 +1,6 @@
+[![Code Climate](https://codeclimate.com/github/dylanpinn/react-voting-client/badges/gpa.svg)](https://codeclimate.com/github/dylanpinn/react-voting-client)
+[![Test Coverage](https://codeclimate.com/github/dylanpinn/react-voting-client/badges/coverage.svg)](https://codeclimate.com/github/dylanpinn/react-voting-client/coverage)
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.  
