@@ -1,0 +1,9 @@
+language: node_js
+sudo: false
+node_js:
+  - 6.2
+script:
+  - "npm test"
+addons:
+  code_climate:
+    repo_token: f5ea32b3f9ce5325ee41b135b3f8ab6497e259701144ea92c9ddb663a28059a4
