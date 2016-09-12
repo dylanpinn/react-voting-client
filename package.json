@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "codeclimate-test-reporter": "^0.3.3",
     "react-addons-test-utils": "^15.3.1",
     "react-scripts": "0.4.1"
   },
