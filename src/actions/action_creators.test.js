@@ -5,7 +5,7 @@ describe('actions', () => {
     const state = {};
     const expectedAction = {
       type: 'SET_STATE',
-      state
+      state,
     };
     expect(actions.setState(state)).toEqual(expectedAction);
   });
@@ -15,7 +15,7 @@ describe('actions', () => {
     const expectedAction = {
       type: 'VOTE',
       meta: { remote: true },
-      entry
+      entry,
     };
     expect(actions.vote(entry)).toEqual(expectedAction);
   });
@@ -23,7 +23,7 @@ describe('actions', () => {
   it('should create an action for next', () => {
     const expectedAction = {
       type: 'NEXT',
-      meta: { remote: true }
+      meta: { remote: true },
     };
     expect(actions.next()).toEqual(expectedAction);
   });
