@@ -13,7 +13,7 @@ engines:
   eslint:
     enabled: true
     channel: "eslint-3"
-    config: "./node_modules/react-scripts/config/eslint.js"
+    config: "./node_modules/react-scripts/.eslintrc"
   fixme:
     enabled: true
 ratings:
@@ -22,9 +22,5 @@ ratings:
   - "**.inc"
   - "**.js"
   - "**.jsx"
-  - "**.module"
-  - "**.php"
-  - "**.py"
-  - "**.rb"
 exclude_paths:
 - node_modules/
