@@ -1,5 +1,7 @@
 [![Code Climate](https://codeclimate.com/github/dylanpinn/react-voting-client/badges/gpa.svg)](https://codeclimate.com/github/dylanpinn/react-voting-client)
 [![Test Coverage](https://codeclimate.com/github/dylanpinn/react-voting-client/badges/coverage.svg)](https://codeclimate.com/github/dylanpinn/react-voting-client/coverage)
+[![Dependency Status](https://david-dm.org/dylanpinn/react-voting-client.svg)](https://david-dm.org/dylanpinn/react-voting-client)
+[![devDependency Status](https://david-dm.org/dylanpinn/react-voting-client/dev-status.svg)](https://david-dm.org/dylanpinn/react-voting-client/?type=dev)
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
