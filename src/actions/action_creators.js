@@ -10,7 +10,7 @@ export function vote(entry) {
     meta: { remote: true },
     type: 'VOTE',
     entry
-  }
+  };
 }
 
 export function next() {

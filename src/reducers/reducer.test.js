@@ -2,6 +2,7 @@ import { List, Map, fromJS } from 'immutable';
 import reducer from './reducer';
 
 describe('reducer', () => {
+  const moviePair = ['Trainspotting', '28 Days Later'];
   it('handles SET_STATE', () => {
     const initialState = Map();
     const action = {
@@ -17,7 +18,7 @@ describe('reducer', () => {
 
     expect(nextState).toEqual(fromJS({
       vote: {
-        pair: ['Trainspotting', '28 Days Later'],
+        pair: moviePair,
         tally: {Trainspotting: 1}
       }
     }));
@@ -29,7 +30,7 @@ describe('reducer', () => {
       type: 'SET_STATE',
       state: {
         vote: {
-          pair: ['Trainspotting', '28 Days Later'],
+          pair: moviePair,
           tally: {Trainspotting: 1}
         }
       }
@@ -38,7 +39,7 @@ describe('reducer', () => {
 
     expect(nextState).toEqual(fromJS({
       vote: {
-        pair: ['Trainspotting', '28 Days Later'],
+        pair: moviePair,
         tally: {Trainspotting: 1}
       }
     }));
@@ -49,7 +50,7 @@ describe('reducer', () => {
       type: 'SET_STATE',
       state: {
         vote: {
-          pair: ['Trainspotting', '28 Days Later'],
+          pair: moviePair,
           tally: {Trainspotting: 1}
         }
       }
@@ -58,7 +59,7 @@ describe('reducer', () => {
 
     expect(nextState).toEqual(fromJS({
       vote: {
-        pair: ['Trainspotting', '28 Days Later'],
+        pair: moviePair,
         tally: {Trainspotting: 1}
       }
     }));
@@ -67,7 +68,7 @@ describe('reducer', () => {
   it('handles VOTE by setting hasVoted', () => {
     const state = fromJS({
       vote: {
-        pair: ['Trainspotting', '28 Days Later'],
+        pair: moviePair,
         tally: { Trainspotting: 1 }
       }
     });
@@ -76,7 +77,7 @@ describe('reducer', () => {
 
     expect(nextState).toEqual(fromJS({
       vote: {
-        pair: ['Trainspotting', '28 Days Later'],
+        pair: moviePair,
         tally: { Trainspotting: 1 }
       },
       hasVoted: 'Trainspotting'
@@ -86,7 +87,7 @@ describe('reducer', () => {
   it('does not set hasVoted for VOTE on invalid entry', () => {
     const state = fromJS({
       vote: {
-        pair: ['Trainspotting', '28 Days Later'],
+        pair: moviePair,
         tally: { Trainspotting: 1 }
       }
     });
@@ -95,7 +96,7 @@ describe('reducer', () => {
 
     expect(nextState).toEqual(fromJS({
       vote: {
-        pair: ['Trainspotting', '28 Days Later'],
+        pair: moviePair,
         tally: { Trainspotting: 1 }
       }
     }));
@@ -104,7 +105,7 @@ describe('reducer', () => {
   it('removes hasVoted on SET_STATE if pair changes', () => {
     const initialState = fromJS({
       vote: {
-        pair: ['Trainspotting', '28 Days Later'],
+        pair: moviePair,
         tally: { Trainspotting: 1 }
       },
       hasVoted: 'Trainspotting'
