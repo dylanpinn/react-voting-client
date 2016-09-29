@@ -2,5 +2,10 @@
   "extends": "airbnb",
   "env": {
     "jest": true
+  },
+  "rules": {
+    "new-cap": [2, {
+      "capIsNewExceptions": ["Map", "Set", "List"]
+    }]
   }
 }
