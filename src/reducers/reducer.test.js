@@ -3,6 +3,15 @@ import reducer from './reducer';
 
 describe('reducer', () => {
   const moviePair = ['Trainspotting', '28 Days Later'];
+  const defaultExpect = (nextState) => {
+    expect(nextState).toEqual(fromJS({
+      vote: {
+        pair: moviePair,
+        tally: { Trainspotting: 1 },
+      },
+    }));
+  };
+
   it('handles SET_STATE', () => {
     const initialState = Map();
     const action = {
@@ -15,13 +24,7 @@ describe('reducer', () => {
       }),
     };
     const nextState = reducer(initialState, action);
-
-    expect(nextState).toEqual(fromJS({
-      vote: {
-        pair: moviePair,
-        tally: { Trainspotting: 1 },
-      },
-    }));
+    defaultExpect(nextState);
   });
 
   it('handles SET_STATE with plain JS payload', () => {
@@ -36,13 +39,7 @@ describe('reducer', () => {
       },
     };
     const nextState = reducer(initialState, action);
-
-    expect(nextState).toEqual(fromJS({
-      vote: {
-        pair: moviePair,
-        tally: { Trainspotting: 1 },
-      },
-    }));
+    defaultExpect(nextState);
   });
 
   it('handles SET_STATE without initial state', () => {
@@ -56,13 +53,7 @@ describe('reducer', () => {
       },
     };
     const nextState = reducer(undefined, action);
-
-    expect(nextState).toEqual(fromJS({
-      vote: {
-        pair: moviePair,
-        tally: { Trainspotting: 1 },
-      },
-    }));
+    defaultExpect(nextState);
   });
 
   it('handles VOTE by setting hasVoted', () => {
@@ -93,13 +84,7 @@ describe('reducer', () => {
     });
     const action = { type: 'VOTE', entry: 'Sunshine' };
     const nextState = reducer(state, action);
-
-    expect(nextState).toEqual(fromJS({
-      vote: {
-        pair: moviePair,
-        tally: { Trainspotting: 1 },
-      },
-    }));
+    defaultExpect(nextState);
   });
 
   it('removes hasVoted on SET_STATE if pair changes', () => {
