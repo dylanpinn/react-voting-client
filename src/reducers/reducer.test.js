@@ -10,7 +10,7 @@ describe('reducer', () => {
       state: Map({
         vote: Map({
           pair: List.of('Trainspotting', '28 Days Later'),
-          tally: Map({Trainspotting: 1})
+          tally: Map({ Trainspotting: 1 })
         })
       })
     };
@@ -19,7 +19,7 @@ describe('reducer', () => {
     expect(nextState).toEqual(fromJS({
       vote: {
         pair: moviePair,
-        tally: {Trainspotting: 1}
+        tally: { Trainspotting: 1 }
       }
     }));
   });
@@ -31,7 +31,7 @@ describe('reducer', () => {
       state: {
         vote: {
           pair: moviePair,
-          tally: {Trainspotting: 1}
+          tally: { Trainspotting: 1 }
         }
       }
     };
@@ -40,7 +40,7 @@ describe('reducer', () => {
     expect(nextState).toEqual(fromJS({
       vote: {
         pair: moviePair,
-        tally: {Trainspotting: 1}
+        tally: { Trainspotting: 1 }
       }
     }));
   });
@@ -51,7 +51,7 @@ describe('reducer', () => {
       state: {
         vote: {
           pair: moviePair,
-          tally: {Trainspotting: 1}
+          tally: { Trainspotting: 1 }
         }
       }
     };
@@ -60,7 +60,7 @@ describe('reducer', () => {
     expect(nextState).toEqual(fromJS({
       vote: {
         pair: moviePair,
-        tally: {Trainspotting: 1}
+        tally: { Trainspotting: 1 }
       }
     }));
   });
@@ -72,7 +72,7 @@ describe('reducer', () => {
         tally: { Trainspotting: 1 }
       }
     });
-    const action = { type: 'VOTE', entry: 'Trainspotting' }
+    const action = { type: 'VOTE', entry: 'Trainspotting' };
     const nextState = reducer(state, action);
 
     expect(nextState).toEqual(fromJS({
@@ -100,7 +100,7 @@ describe('reducer', () => {
         tally: { Trainspotting: 1 }
       }
     }));
-  })
+  });
 
   it('removes hasVoted on SET_STATE if pair changes', () => {
     const initialState = fromJS({
