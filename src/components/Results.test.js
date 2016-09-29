@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {
   renderIntoDocument,
   scryRenderedDOMComponentsWithClass,
-  Simulate
+  Simulate,
 } from 'react-addons-test-utils';
 import { List, Map } from 'immutable';
 import { Results } from './Results';
@@ -11,7 +11,7 @@ import { Results } from './Results';
 describe('Results', () => {
   it('renders entries with vote counts or zero', () => {
     const pair = List.of('Trainspotting', '28 Days Later');
-    const tally = Map({'Trainspotting': 5});
+    const tally = Map({ Trainspotting: 5 });
     const component = renderIntoDocument(
       <Results pair={pair} tally={tally} />
     );
@@ -45,8 +45,9 @@ describe('Results', () => {
   it('renders the winner when there is one', () => {
     const component = renderIntoDocument(
       <Results winner="Trainspotting"
-              pair={["Trainspotting", "28 Days Later"]}
-              tally={Map()} />
+        pair={['Trainspotting', '28 Days Later']}
+        tally={Map()}
+      />
     );
     const winner = ReactDOM.findDOMNode(component.refs.winner);
     expect(winner).toBe.ok;

@@ -10,17 +10,17 @@ describe('reducer', () => {
       state: Map({
         vote: Map({
           pair: List.of('Trainspotting', '28 Days Later'),
-          tally: Map({ Trainspotting: 1 })
-        })
-      })
+          tally: Map({ Trainspotting: 1 }),
+        }),
+      }),
     };
     const nextState = reducer(initialState, action);
 
     expect(nextState).toEqual(fromJS({
       vote: {
         pair: moviePair,
-        tally: { Trainspotting: 1 }
-      }
+        tally: { Trainspotting: 1 },
+      },
     }));
   });
 
@@ -31,17 +31,17 @@ describe('reducer', () => {
       state: {
         vote: {
           pair: moviePair,
-          tally: { Trainspotting: 1 }
-        }
-      }
+          tally: { Trainspotting: 1 },
+        },
+      },
     };
     const nextState = reducer(initialState, action);
 
     expect(nextState).toEqual(fromJS({
       vote: {
         pair: moviePair,
-        tally: { Trainspotting: 1 }
-      }
+        tally: { Trainspotting: 1 },
+      },
     }));
   });
 
@@ -51,17 +51,17 @@ describe('reducer', () => {
       state: {
         vote: {
           pair: moviePair,
-          tally: { Trainspotting: 1 }
-        }
-      }
+          tally: { Trainspotting: 1 },
+        },
+      },
     };
     const nextState = reducer(undefined, action);
 
     expect(nextState).toEqual(fromJS({
       vote: {
         pair: moviePair,
-        tally: { Trainspotting: 1 }
-      }
+        tally: { Trainspotting: 1 },
+      },
     }));
   });
 
@@ -69,8 +69,8 @@ describe('reducer', () => {
     const state = fromJS({
       vote: {
         pair: moviePair,
-        tally: { Trainspotting: 1 }
-      }
+        tally: { Trainspotting: 1 },
+      },
     });
     const action = { type: 'VOTE', entry: 'Trainspotting' };
     const nextState = reducer(state, action);
@@ -78,9 +78,9 @@ describe('reducer', () => {
     expect(nextState).toEqual(fromJS({
       vote: {
         pair: moviePair,
-        tally: { Trainspotting: 1 }
+        tally: { Trainspotting: 1 },
       },
-      hasVoted: 'Trainspotting'
+      hasVoted: 'Trainspotting',
     }));
   });
 
@@ -88,8 +88,8 @@ describe('reducer', () => {
     const state = fromJS({
       vote: {
         pair: moviePair,
-        tally: { Trainspotting: 1 }
-      }
+        tally: { Trainspotting: 1 },
+      },
     });
     const action = { type: 'VOTE', entry: 'Sunshine' };
     const nextState = reducer(state, action);
@@ -97,8 +97,8 @@ describe('reducer', () => {
     expect(nextState).toEqual(fromJS({
       vote: {
         pair: moviePair,
-        tally: { Trainspotting: 1 }
-      }
+        tally: { Trainspotting: 1 },
+      },
     }));
   });
 
@@ -106,24 +106,24 @@ describe('reducer', () => {
     const initialState = fromJS({
       vote: {
         pair: moviePair,
-        tally: { Trainspotting: 1 }
+        tally: { Trainspotting: 1 },
       },
-      hasVoted: 'Trainspotting'
+      hasVoted: 'Trainspotting',
     });
     const action = {
       type: 'SET_STATE',
       state: {
         vote: {
-          pair: ['Sunshine', 'Slumdog Millionaire']
-        }
-      }
+          pair: ['Sunshine', 'Slumdog Millionaire'],
+        },
+      },
     };
     const nextState = reducer(initialState, action);
 
     expect(nextState).toEqual(fromJS({
       vote: {
-        pair: ['Sunshine', 'Slumdog Millionaire']
-      }
+        pair: ['Sunshine', 'Slumdog Millionaire'],
+      },
     }));
   });
 });

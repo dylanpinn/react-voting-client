@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route, hashHistory} from 'react-router';
+import { Router, Route, hashHistory } from 'react-router';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import io from 'socket.io-client';
@@ -23,10 +23,10 @@ const createStoreWithMiddleware = applyMiddleware(
 )(createStore);
 const store = createStoreWithMiddleware(reducer);
 
-const routes = <Route component={App}>
+const routes = (<Route component={App}>
   <Route path="/results" component={ResultsContainer} />
   <Route path="/" component={VotingContainer} />
-</Route>;
+</Route>);
 
 ReactDOM.render(
   <Provider store={store}>
