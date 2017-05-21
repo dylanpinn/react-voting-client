@@ -2,6 +2,7 @@
 [![Test Coverage](https://codeclimate.com/github/dylanpinn/react-voting-client/badges/coverage.svg)](https://codeclimate.com/github/dylanpinn/react-voting-client/coverage)
 [![Dependency Status](https://david-dm.org/dylanpinn/react-voting-client.svg)](https://david-dm.org/dylanpinn/react-voting-client)
 [![devDependency Status](https://david-dm.org/dylanpinn/react-voting-client/dev-status.svg)](https://david-dm.org/dylanpinn/react-voting-client/?type=dev)
+[![Greenkeeper badge](https://badges.greenkeeper.io/dylanpinn/react-voting-client.svg)](https://greenkeeper.io/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
@@ -10,7 +11,6 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 ## Table of Contents
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/dylanpinn/react-voting-client.svg)](https://greenkeeper.io/)
 
 - [Updating to New Releases](#updating-to-new-releases)
 - [Sending Feedback](#sending-feedback)
