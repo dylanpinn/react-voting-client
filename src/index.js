@@ -13,24 +13,25 @@ import { ResultsContainer } from './components/Results';
 
 require('./styles.css');
 
-const socket = io(`${location.protocol}//${location.hostname}:8090`);
-socket.on('state', state =>
-  store.dispatch(setState(state))
-);
+const socket = io(`${window.location.protocol}//${window.location.hostname}:8090`);
 
 const createStoreWithMiddleware = applyMiddleware(
-  remoteActionMiddleware(socket)
+  remoteActionMiddleware(socket),
 )(createStore);
 const store = createStoreWithMiddleware(reducer);
 
-const routes = (<Route component={App}>
-  <Route path="/results" component={ResultsContainer} />
-  <Route path="/" component={VotingContainer} />
-</Route>);
+socket.on('state', state => store.dispatch(setState(state)));
+
+const routes = (
+  <Route component={App}>
+    <Route path="/results" component={ResultsContainer} />
+    <Route path="/" component={VotingContainer} />
+  </Route>
+);
 
 ReactDOM.render(
   <Provider store={store}>
     <Router history={hashHistory}>{routes}</Router>
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
