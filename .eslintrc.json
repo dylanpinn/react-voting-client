@@ -1,11 +1,28 @@
 {
-  "extends": "airbnb",
+  "extends": ["react-app","airbnb"],
   "env": {
-    "jest": true
+    "jest": true,
+    "browser": true
   },
   "rules": {
-    "new-cap": [2, {
-      "capIsNewExceptions": ["Map", "Set", "List"]
-    }]
+    "new-cap": [
+      2,
+      {
+        "capIsNewExceptions": [
+          "Map",
+          "Set",
+          "List"
+        ]
+      }
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ]
   }
 }
