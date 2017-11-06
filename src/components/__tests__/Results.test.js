@@ -12,9 +12,7 @@ describe('Results', () => {
   it('renders entries with vote counts or zero', () => {
     const pair = List.of('Trainspotting', '28 Days Later');
     const tally = Map({ Trainspotting: 5 });
-    const component = renderIntoDocument(
-      <Results pair={pair} tally={tally} />
-    );
+    const component = renderIntoDocument(<Results pair={pair} tally={tally} />);
     const entries = scryRenderedDOMComponentsWithClass(component, 'entry');
     const [train, days] = entries.map(e => e.textContent);
 
@@ -30,25 +28,22 @@ describe('Results', () => {
     const next = () => nextInvoked = true;
 
     const pair = List.of('Trainspotting', '28 Days Later');
-    const component = renderIntoDocument(
-      <Results
-        pair={pair}
-        tally={Map()}
-        next={next}
-      />
-    );
+    const component = renderIntoDocument(<Results
+      pair={pair}
+      tally={Map()}
+      next={next}
+    />);
     Simulate.click(ReactDOM.findDOMNode(component.refs.next));
 
     expect(nextInvoked).toEqual(true);
   });
 
   it('renders the winner when there is one', () => {
-    const component = renderIntoDocument(
-      <Results winner="Trainspotting"
-        pair={['Trainspotting', '28 Days Later']}
-        tally={Map()}
-      />
-    );
+    const component = renderIntoDocument(<Results
+      winner="Trainspotting"
+      pair={['Trainspotting', '28 Days Later']}
+      tally={Map()}
+    />);
     const winner = ReactDOM.findDOMNode(component.refs.winner);
     expect(winner).toBe.ok;
     expect(winner.textContent).toContain('Trainspotting');

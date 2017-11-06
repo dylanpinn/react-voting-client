@@ -27,18 +27,19 @@ export class Results extends React.PureComponent<*> {
             (<div key={entry} className="entry">
               <h1>{entry}</h1>
               <div className="voteVisualization">
-                <div className="votesBlock"
+                <div
+                  className="votesBlock"
                   style={{ width: this.getVotesBlockWidth(entry) }}
-                 />
+                />
               </div>
               <div className="voteCount">
                 {this.getVotes(entry)}
               </div>
-            </div>),)}
+            </div>))}
         </div>
         <div className="management">
           <button
-ref="next"
+            ref="next"
             className="next"
             onClick={this.props.next}
           >

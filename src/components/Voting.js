@@ -25,5 +25,5 @@ function mapStateToProps(state) {
 
 export const VotingContainer = connect(
   mapStateToProps,
-  actionCreators
+  actionCreators,
 )(Voting);
