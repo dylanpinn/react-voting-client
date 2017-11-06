@@ -1,13 +1,23 @@
 {
-  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "extends": ["airbnb", "plugin:flowtype/recommended"],
+  "plugins": ["flowtype"],
   "env": {
     "browser": true,
     "jest": true
   },
   "rules": {
-    "new-cap": [2, {
-      "capIsNewExceptions": ["Map", "Set", "List"]
-    }],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "new-cap": [
+      2,
+      {
+        "capIsNewExceptions": ["Map", "Set", "List"]
+      }
+    ],
+    "react/jsx-filename-extension": 0
+  },
+  "settings": {
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": true
+    }
   }
 }
