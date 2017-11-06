@@ -4,7 +4,7 @@ import {
   renderIntoDocument,
   scryRenderedDOMComponentsWithTag,
   Simulate,
-} from 'react-addons-test-utils';
+} from 'react-dom/test-utils';
 import { List } from 'immutable';
 import { Voting } from '../Voting';
 
