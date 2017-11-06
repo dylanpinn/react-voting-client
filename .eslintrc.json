@@ -12,7 +12,8 @@
       {
         "capIsNewExceptions": ["Map", "Set", "List"]
       }
-    ]
+    ],
+    "react/jsx-filename-extension": 0
   },
   "settings": {
     "flowtype": {

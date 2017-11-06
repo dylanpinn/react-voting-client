@@ -1,5 +1,5 @@
 import { List, Map, fromJS } from 'immutable';
-import reducer from './reducer';
+import reducer from '../reducer';
 
 describe('reducer', () => {
   const moviePair = ['Trainspotting', '28 Days Later'];
