@@ -6,21 +6,17 @@ import * as actionCreators from '../actions/action_creators';
 
 export const VOTE_WIDTH_PERCENT = 8;
 
-export class Results extends React.PureComponent {
-  getPair = () => {
-    return this.props.pair || [];
-  };
+export class Results extends React.PureComponent<*> {
+  getPair = () => this.props.pair || [];
 
-  getVotes = (entry) => {
+  getVotes = (entry: any) => {
     if (this.props.tally && this.props.tally.has(entry)) {
       return this.props.tally.get(entry);
     }
     return 0;
   };
 
-  getVotesBlockWidth = (entry) => {
-    return `${this.getVotes(entry) * VOTE_WIDTH_PERCENT}%`;
-  };
+  getVotesBlockWidth = (entry: any) => `${this.getVotes(entry) * VOTE_WIDTH_PERCENT}%`;
 
   render() {
     return this.props.winner ?
@@ -28,7 +24,7 @@ export class Results extends React.PureComponent {
       <div className="results">
         <div className="tally">
           {this.getPair().map(entry =>
-            <div key={entry} className="entry">
+            (<div key={entry} className="entry">
               <h1>{entry}</h1>
               <div className="voteVisualization">
                 <div className="votesBlock"
@@ -38,11 +34,11 @@ export class Results extends React.PureComponent {
               <div className="voteCount">
                 {this.getVotes(entry)}
               </div>
-            </div>
-          )}
+            </div>),)}
         </div>
         <div className="management">
-          <button ref="next"
+          <button
+ref="next"
             className="next"
             onClick={this.props.next}
           >
@@ -63,5 +59,5 @@ function mapStateToProps(state) {
 
 export const ResultsContainer = connect(
   mapStateToProps,
-  actionCreators
+  actionCreators,
 )(Results);
