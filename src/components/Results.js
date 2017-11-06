@@ -24,18 +24,20 @@ export class Results extends React.PureComponent<*> {
       <div className="results">
         <div className="tally">
           {this.getPair().map(entry =>
-            (<div key={entry} className="entry">
-              <h1>{entry}</h1>
-              <div className="voteVisualization">
-                <div
-                  className="votesBlock"
-                  style={{ width: this.getVotesBlockWidth(entry) }}
-                />
+            (
+              <div key={entry} className="entry">
+                <h1>{entry}</h1>
+                <div className="voteVisualization">
+                  <div
+                    className="votesBlock"
+                    style={{ width: this.getVotesBlockWidth(entry) }}
+                  />
+                </div>
+                <div className="voteCount">
+                  {this.getVotes(entry)}
+                </div>
               </div>
-              <div className="voteCount">
-                {this.getVotes(entry)}
-              </div>
-            </div>))}
+          ))}
         </div>
         <div className="management">
           <button
@@ -58,6 +60,7 @@ function mapStateToProps(state) {
   };
 }
 
+// $FlowFixMe
 export const ResultsContainer = connect(
   mapStateToProps,
   actionCreators,

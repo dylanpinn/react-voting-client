@@ -24,6 +24,7 @@ function mapStateToProps(state) {
   };
 }
 
+// $FlowFixMe
 export const VotingContainer = connect(
   mapStateToProps,
   actionCreators,

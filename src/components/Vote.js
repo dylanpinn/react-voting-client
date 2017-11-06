@@ -7,7 +7,7 @@ export default class extends React.PureComponent<*> {
 
   isDisabled = () => !!this.props.hasVoted;
 
-  hasVotedFor = entry => this.props.hasVoted === entry;
+  hasVotedFor = (entry: any) => this.props.hasVoted === entry;
 
   render() {
     return (
