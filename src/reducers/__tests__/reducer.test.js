@@ -1,8 +1,17 @@
 import { List, Map, fromJS } from 'immutable';
-import reducer from './reducer';
+import reducer from '../reducer';
 
 describe('reducer', () => {
   const moviePair = ['Trainspotting', '28 Days Later'];
+  const defaultAction = {
+    type: 'SET_STATE',
+    state: {
+      vote: {
+        pair: moviePair,
+        tally: { Trainspotting: 1 },
+      },
+    },
+  };
   const defaultExpect = (nextState) => {
     expect(nextState).toEqual(fromJS({
       vote: {
@@ -29,29 +38,13 @@ describe('reducer', () => {
 
   it('handles SET_STATE with plain JS payload', () => {
     const initialState = Map();
-    const action = {
-      type: 'SET_STATE',
-      state: {
-        vote: {
-          pair: moviePair,
-          tally: { Trainspotting: 1 },
-        },
-      },
-    };
+    const action = defaultAction;
     const nextState = reducer(initialState, action);
     defaultExpect(nextState);
   });
 
   it('handles SET_STATE without initial state', () => {
-    const action = {
-      type: 'SET_STATE',
-      state: {
-        vote: {
-          pair: moviePair,
-          tally: { Trainspotting: 1 },
-        },
-      },
-    };
+    const action = defaultAction;
     const nextState = reducer(undefined, action);
     defaultExpect(nextState);
   });
