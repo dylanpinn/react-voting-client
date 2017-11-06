@@ -1,21 +1,20 @@
-/** @flow */
+// @flow
 import React from 'react';
-import PureRenderMixin from 'react-addons-pure-render-mixin';
 import { connect } from 'react-redux';
 import Winner from './Winner';
 import Vote from './Vote';
 import * as actionCreators from '../actions/action_creators';
 
-export const Voting = React.createClass({
-  mixins: [PureRenderMixin],
-  render () {
-    return (<div>
-      {this.props.winner ?
+export class Voting extends React.PureComponent<*> {
+  render() {
+    return (
+      <div>{this.props.winner ?
         <Winner ref="winner" winner={this.props.winner} /> :
         <Vote {...this.props} />}
-    </div>);
-  },
-});
+      </div>
+    );
+  }
+}
 
 function mapStateToProps(state) {
   return {
@@ -25,7 +24,8 @@ function mapStateToProps(state) {
   };
 }
 
+// $FlowFixMe
 export const VotingContainer = connect(
   mapStateToProps,
-  actionCreators
+  actionCreators,
 )(Voting);

@@ -1,4 +1,4 @@
-import * as actions from './action_creators';
+import * as actions from '../action_creators';
 
 describe('actions', () => {
   it('should create an action to set state', () => {

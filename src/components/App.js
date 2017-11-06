@@ -1,7 +1,8 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
 
-export default React.createClass({
+export default class extends React.Component<*> {
   render() {
     return this.props.children;
-  },
-});
+  }
+}
