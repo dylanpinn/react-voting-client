@@ -4,7 +4,7 @@ import {
   renderIntoDocument,
   scryRenderedDOMComponentsWithClass,
   Simulate,
-} from 'react-addons-test-utils';
+} from 'react-dom/test-utils';
 import { List, Map } from 'immutable';
 import { Results } from '../Results';
 
